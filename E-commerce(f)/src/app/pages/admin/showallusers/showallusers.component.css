@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(24, 62, 87);
+    margin-top: 3px;
+    /* width: 1536px; */
+    height: 659px;
+}
+table{
+    background-color: white;
+}
+h1{color: white;}
+.btn{
+    background-color: #8B4513;
+    color: white;
+}

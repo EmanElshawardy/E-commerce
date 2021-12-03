@@ -1,0 +1,38 @@
+/* .table{
+    background-color: white;
+    border: 10px;
+    } */
+.card{
+    width: 700px;
+    height: 350px;
+    margin-top: 50px ;
+}
+    
+    button, a{width: 150px;
+        /* margin-left:60px; */
+        border-radius: 10px 10px 10px 10px;
+        }
+    a:hover{
+        background-color: white;
+        color: rgb(223, 46, 46);
+        
+        }
+    button:hover{
+    background-color: white;
+    color: gray;
+    }    
+    body{
+        background-color: rgb(24, 62, 87);
+        margin-top: 50px;
+        height: 671px;
+    }
+    /* .label{margin-bottom: 3 00px;} */
+    /* input{width: 500px;
+       } */
+    h1{
+        color: rgb(24, 62, 87); 
+    }
+    button{width: 150px;
+        /* margin-left:60px; */
+    }
+    

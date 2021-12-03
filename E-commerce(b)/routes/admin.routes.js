@@ -1,0 +1,22 @@
+const router=require('express').Router()
+const AdminController=require('../controller/admin.controller')
+const { validationAdmin }=require('../middleware/auth.middleware')
+const upload = require("../middleware/fileupload")
+
+router.get('/showallusers', validationAdmin , AdminController.showallusers)
+router.get('/showsingleuser/:id', validationAdmin ,AdminController.showsingleuser)
+router.put('/updateanyuser/:id', validationAdmin , AdminController.updateanyuser)
+router.get("/showsinglecart/:id" ,validationAdmin ,AdminController.showsinglecart)
+router.get('/showsingleorders/:id' ,validationAdmin ,AdminController.showsingleorders)
+router.delete('/deleteanyuser/:id', validationAdmin , AdminController.deleteanyuser)
+router.post('/addproduct', validationAdmin , upload.single('img') , AdminController.product)
+router.get('/showsingle/:id', validationAdmin , AdminController.showsingle)
+router.put('/updateproduct/:id', validationAdmin , AdminController.updateproduct)
+router.post('/addproductimg/:id', validationAdmin , upload.single('img') , AdminController.addproductimg)
+router.delete('/deleteanyproduct/:id', validationAdmin , AdminController.deleteproduct)
+router.get("/showcarts" ,validationAdmin ,AdminController.showcarts)
+router.delete('/deleteusercart' ,validationAdmin ,AdminController.deleteusercart)
+router.get('/showorders' ,validationAdmin ,AdminController.showorders)
+router.post('/addnewadmin',validationAdmin,AdminController.addnewadmin)
+
+module.exports=router

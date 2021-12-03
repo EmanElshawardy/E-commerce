@@ -1,0 +1,33 @@
+/* .navbar{
+    background-color: #808080;
+
+} */
+
+h1 , b{
+    /* background-color: rgb(24, 62, 87); */
+    color: rgb(24, 62, 87);
+    /* padding-left:15px ; */
+}
+/* .nav-link{
+    float: left;
+    text-align: center;
+    
+} */
+ul{
+    /* float: right; */
+    /* padding-left: auto; */
+}
+button{margin-top: 100px;}
+.dropdown-item :hover{
+    background-color: bisque;
+    
+}
+
+#navigation .navbar-nav li a,li{
+    /* float: right; */
+    text-align: left;
+    color: rgb(24, 62, 87);
+    font-weight: bold;
+    border: 2px solid  rgb(24, 62, 87);
+    border-radius: 15px;
+}

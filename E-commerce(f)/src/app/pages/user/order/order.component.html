@@ -1,0 +1,28 @@
+<body>
+<div class="container mt-4">
+    <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <h1 class="text-center">Show Carts</h1>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card d-flex" >
+            <div class="card-body">
+                <p>user name : {{orderinfo.username}}</p>
+                <p>user phone : {{orderinfo.phone}}</p>
+                <p>user address : {{orderinfo.address}}</p>
+                <div *ngFor='let product of orderinfo.productdata'>
+                    <p>Product Title : {{product.productstitle}}</p>
+                    <p>Product quantity : {{product.quantity}}</p>
+                    <p>Single Product price : {{product.productprice}}</p>
+                </div>
+                <p>Total Price : {{orderinfo.totalprice}}</p>
+                <div class="d-flex justify-content-center mt-2" style="border: none;">
+                    <button type="button" class="btn-secondary btn-block text-uppercase " (click)='sendorder()'>Confirm</button>
+                    <!-- <button type="button" class="btn-secondary btn-block text-uppercase ms-2 "  routerLink="">Cancel</button> -->
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>

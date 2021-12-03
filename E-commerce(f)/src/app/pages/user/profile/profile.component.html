@@ -1,0 +1,63 @@
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-5 mx-auto">
+    <div class="card card-signin my-5">
+    <div class="card-body">
+  <h1 class="card-title text-center">Profile</h1>
+    <form class="label" [formGroup]="updateuser" (ngSubmit)='edituser()'>
+        <div class="form-label-group">
+              <label >User Id</label>
+              <input class="form-control " value="{{userData._id}}" disabled>
+        </div>
+        <div class="form-label-group">
+              <label class="">User Name</label>
+              <input class="form-control" value="{{userData.username}}" formControlName="username">
+        </div>
+        <div class="alert alert-danger my-3" *ngIf="username?.invalid && ( username?.dirty ||username?.touched)">
+            <p>invalid username</p>
+        </div>
+        <div class="form-label-group">
+              <label class="col-form-label">User Email</label>
+              <input class="form-control" value="{{userData.email}}" disabled>
+        </div>
+        <div class="form-label-group">
+              <label class="col-form-label">User Phone</label>
+              <input class="form-control" value="{{userData.phone}}" formControlName="phone">
+        </div>
+        <div class="alert alert-danger my-3" *ngIf="phone?.invalid && ( phone?.touched)">
+            <p *ngIf="phone?.errors?.pattern">required phone pattern</p>
+            <p *ngIf="phone?.errors?.required">required phone</p>
+        </div>
+        <div class="form-label-group">
+              <label class="col-form-label">Gender</label>
+              <input class="form-control" value="{{userData.gender}}" formControlName="gender">
+        </div>
+        <div class="alert alert-danger my-3" *ngIf="gender?.invalid && ( gender?.touched)">
+            <p *ngIf="gender?.errors?.pattern">required gender pattern</p>
+            <p *ngIf="gender?.errors?.required">required gender</p>
+        </div>
+        <div class="form-label-group">
+            
+              <label class="col-form-label">User Address</label>
+              <input class="form-control" value="{{userData.address}}" formControlName="address">
+            
+        </div>
+        <div class="alert alert-danger my-3" *ngIf="address?.invalid && ( address?.dirty ||address?.touched)">
+            <p>invalid address</p>
+        </div>
+        <br>
+            <button type="submit" class="btn btn-lg  btn-outline-secondary btn-block text-uppercase" >Edit</button>
+            <!-- <hr class="my-4">
+            <p class="text-center">OR</p> -->
+            <a class="btn btn-lg  btn-secondary btn-block text-uppercase ms-2"   routerLink='../changepass'>Change </a>
+            <!-- <hr class="my-4">
+            <p class="text-center">OR</p> -->
+            <button type="button" class="btn btn-lg  btn-outline-secondary btn-block text-uppercase ms-2" (click)="deleteuser()">Delete </button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>

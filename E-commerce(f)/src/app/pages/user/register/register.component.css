@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(24, 62, 87);
+    margin-top: 3px;
+    /* width: 1536px; */
+    height: 659px;
+}
+button{width: 350px;
+    margin-left:60px;}
+/* a{width: 350px;
+    margin-left:60px;} */
+h1{
+    color: rgb(24, 62, 87); 
+}

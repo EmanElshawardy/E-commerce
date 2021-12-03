@@ -1,0 +1,86 @@
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/13.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block h">
+        <h1> <pre>  Your Way To Dress Classy </pre> </h1>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/14.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block h">
+        <h1> <pre>  Your Way To Dress Classy </pre> </h1>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/16.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block h">
+        <h1> <pre>  Your Way To Dress Classy </pre> </h1>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    <div class="container mt-5">
+      <div class="">
+        <h1>Wedding</h1>
+        <h2>ـــــــــــــــــــــــــــــــــ</h2>
+      </div>
+
+<div class="container">
+    <div class="row mt-4 justify-content-center">
+        <div *ngFor='let product of wedding' class="card ms-2 mt-2 pt-2 pb-2" style="width: 22rem;">
+            <img class="card-img-top" [src]="product.img" alt="wedding">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.desc}}</p>
+              <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between">
+                  <p class="card-text">Product Price</p>
+                  <p class="card-text">LE {{product.price}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text">Product Size</p>
+                <p class="card-text">{{product.size}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text">Product Stock</p>
+                <p class="card-text">{{product.stock}}</p>
+                </div>
+              </div>  
+              <div *ngIf="!_data.isAdmin">
+                <form class="d-flex mb-4 justify-content-between" #quantity='ngForm'>
+                  <label>Quantity : </label>
+                  <input type="number" name="quantity" [disabled]='(product.stock==0)' style=" width:120px;" max="{{product.stock}}" ngModel #quantity="ngModel">
+                </form>
+                <span class="alert alert-danger my-3" *ngIf="quantity.invalid && (quantity.touched || quantity.dirty)">
+                  No stock
+                </span>         
+                <div class="d-flex  justify-content-center" *ngIf="!_data.isAdmin">
+                  <button [disabled]="product.stock==0" class="btn btn-success" (click)='addtocart(product._id,quantity.value)'>Add To Cart</button>
+                </div>  
+              </div>
+              <div>
+                <form #pimage = "ngForm" (ngSubmit)="upimg(product._id)" *ngIf='_data.isAdmin' class="d-flex flex-column justify-content-center">
+                  <label>Choose product image :</label>
+                  <input name="img" type="file" (change)="onChangeFile($event)">
+                  <button class="mt-2">update </button>
+                </form>   
+              <div class="d-flex  justify-content-center" *ngIf='_data.isAdmin' class='mt-2 d-flex justify-content-center'>
+                <button [disabled]="product.stock==0" class="btn btn-danger" (click)='deleteproductbyadmin(product._id)'>DELETE</button>
+              </div>  
+              <div class="d-flex  justify-content-center" *ngIf='_data.isAdmin' class='mt-2 d-flex justify-content-center'>
+                <button [disabled]="product.stock==0" routerLink="/admin/showsingleproduct/{{product._id}}" class="btn btn-primary">Edit</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

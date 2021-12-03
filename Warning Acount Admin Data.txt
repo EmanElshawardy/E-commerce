@@ -1,0 +1,8 @@
+You should add the first administrator manually to the database
+ so i made  a json file with admin account insert it 
+into the Mongodb compass
+
+
+ACCOUNT DATA FOR LOGIN :
+e@gmail.com
+123
